@@ -40,9 +40,6 @@ export const initHelpers = () => {
 
     // FIRST LEVEL
     const foundKey = Object.keys(recommendations).find(k => k.includes(searchValue));
-
-    console.log(searchValue, foundKey, recommendations);
-
     if (foundKey) return recommendations[foundKey] ?? [];
 
     // SECOND LEVEL
@@ -79,9 +76,7 @@ export const initHelpers = () => {
 
       for (const r of recommendation) {
         const passedRec = foundAnyEnter(r);
-        if (passedRec) {
-          results.push(passedRec);
-        }
+        if (passedRec) results.push(passedRec);
       }
     }
 
