@@ -55,7 +55,6 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Доступный фокус для инпутов и textarea */
 input:focus-visible,
 textarea:focus-visible {
   outline: 2px solid var(--font-color);
@@ -64,13 +63,62 @@ textarea:focus-visible {
 
 /* COMMON */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .active {
   font-weight: 600;
   text-decoration: underline;
   transition: all 0.3s ease;
+}
+
+.search-cards {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+  right: 100px;
+  z-index: 1;
+  height: calc(100dvh - 70px);
+  background-color: var(--bg-text);
+  overflow: auto;
+}
+
+.search-card {
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  background-color: var(--white);
+  outline: 1px solid var(--border-role);
+}
+
+.search-card img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 20px;
+}
+
+.content-card h3 {
+  font-weight: 600;
+}
+
+.content-card p {
+  color: gray;
+  font-size: 14px;
+}
+
+.content-card .btn-card {
+  padding: 10px 20px;
 }
 
 /* ACCESSIBILITY */
