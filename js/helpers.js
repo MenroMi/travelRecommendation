@@ -59,7 +59,7 @@ export const initHelpers = () => {
           const passedEl = foundAnyEnter(el);
           if (passedEl) return passedEl;
         } else if (
-          el != null &&
+          el !== null &&
           el.toString().toLowerCase().includes(searchValue)
         ) {
           return node;
@@ -75,8 +75,8 @@ export const initHelpers = () => {
       if (!Array.isArray(recommendation)) continue;
 
       for (const r of recommendation) {
-        const passedRec = foundAnyEnter(r);
-        if (passedRec) results.push(passedRec);
+        const passedRec = r.cities?.filter(c => foundAnyEnter(c)) ?? foundAnyEnter(r);
+        if (passedRec) results.push(...(Array.isArray(passedRec) ? passedRec : [passedRec]));
       }
     }
 
