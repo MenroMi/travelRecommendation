@@ -6,7 +6,7 @@ export const initSearch = (helpers) => {
 
   async function requestRecommendations() {
     try {
-      const res = await fetch('../api/travel_recommendation_api.json');
+      const res = await fetch('./api/travel_recommendation_api.json');
       return res.ok ? await res.json() : FALLBACK_MSG;
     } catch (error) {
       console.warn('Failed to request travel recommendations: ', error);
